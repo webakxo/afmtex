@@ -1,0 +1,285 @@
+\documentclass[12pt,a4paper,hidelinks,oneside]{book} 
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[none]{hyphenat} %prevent words from breaking 
+\usepackage[driverfallback=hypertex]{hyperref}
+\gappto\captionsfrench{\renewcommand{\contentsname}{Sommaire}}
+\title{La Modulation}
+\author{fill page \\
+	\and 
+	fill page\\ 
+}
+\date{}
+
+\begin{document}
+\maketitle
+%\pagenumbering{gobble}
+\tableofcontents
+% Pourquoi es-tu là ? (space)
+%Je suis content ! (space)
+%Mon nom est : Idriss (space)
+%bla bla ; bla bla (space)
+%[10:47 PM, 4/5/2020] Idriss Al Idrissi: Ceci est la fin d’une phrase. (no space)
+%Ceci est la fin d’une phrase. (no space)
+%Ceci est la fin d’une proposition, (no space)
+\chapter{introduction sur la modulation}
+\chapter{la modulation d'amplitude}
+\section{la communication en modulation d'amplitude}
+Un système de communication transmet à travers un canal des inormations de la source vers un utilisateur :
+\begin{itemize}
+	\item La source fournit l'information sous la forme d'une signal analogique ou numèrique (la souce peut peut être un microphone , un lecteur de disque
+	capteur , données numériques $\ldots$ ) ;
+	\item L'émetteur inscrit cette information sur l'amplitude d'une porteuse sinusoïdale de fréquence $f_{0}$ : c'est la modulation d'amplitude ( les informations sont inscrite dans l'amplitude de la porteuse);
+	\item L'antenne d'émission transforme ce signal électrique en onde électromagnétique . l'antenne de reception effectue l'opération inverse;
+	\item L'antenne de reception transforme l'onde électromagnetique en signal électrique et on retrouve a la base de l'antenne un signal qui est exactement 
+	la même forme que le signal qui a été envoyé sur l'antenne d'émission, la différence est que, et a cause de la distance, le signal ici est beaucoup plus faible, et la valeur l'amplitude est dans les $\SI{}{\milli\volt}$ ou $\SI{}{\micro\volt}$ alors que dans l'amplitude de signal modulé est dans les $\SI{}{\volt}$.
+	\item Le recepteur sélectionne dans la multitude des signaux captés par l'antenne, l'émission qui nous s'intéresse et il va extraire l'information c'est qu'on appele : la démodulation, et cette information peut être traduit par un haut (si l'information est un audio). 
+\end{itemize}
+\section{la modulation AM double bande avec porteuse}
+\subsection{principe}
+Pour Produire un signal modulé en amplitude, il faut :
+
+\begin{itemize}
+	\item Une porteuse sinusoïdale de fréquence $f_{0}$ .
+	\item Une information BF qui peut être un signal audio, vidéo, analogique ou numérique.
+\end{itemize}
+
+Soit $p(\,t)\,=\cos2\pi f_{0}t$ la porteuse et $m(\,t)\ $ le message à transmettre. Le message AM DBAP s’écrit :la porteuse et $m(\,t)\ $ le message à transmettre. Le message AM DBAP s’écrit :
+\begin{equation}
+s(\,t)\,=(\,A+m(\,t)\,)\,\cos 2\pi f_{0}t
+\end{equation}
+
+Dans le cas d’un signal modulant sinusoïdal $m\left(t\right) = Am\cos 2\pi f_{m} t $, le signal AM DBAP devient :
+\begin{equation}
+\begin{aligned}
+s(t) &=\left(A+A_{m} \cos 2 \pi f_{m} t\right) \cos 2 \pi f_{0} t \\
+&=A\left(1+\frac{A_{m}}{A} \cos 2 \pi f_{m} t\right) \cos 2 \pi f_{0} t \\
+&=A\left(1+k \cos 2 \pi f_{m} t\right) \cos 2 \pi f_{0} t
+\end{aligned}
+\end{equation}
+
+
+
+
+Avec $k=\frac{Am}{A}$ 
+: indice de modulation (ou taux de modulation) = rapport entre l’amplitude du signal
+modulant et celle de la porteuse.
+Pour un signal modulant quelconque, l’indice de modulation est défini par :
+\begin{equation}
+k=\frac{\left|m(t)\right|_{max}}{A}
+\end{equation}
+
+\subsection{représentation temporelle d’un signal DBAP}
+
+Si $k \leq 1$, l’enveloppe du signal modulé $s\left(t\right)$ possède exactement la forme du signal modualnt. Si $k $>$ 1$, l’enveloppe du signal modulé ne correspond pas au signal modulant : le signal AM est surmodulé.
+En pratique, on doit toujours avoir $ k \leq 1$.
+
+Détermination de l’indice de modulation k à partir de la représentation temporelle du signal AM
+DBAP :
+
+
+ 
+
+\begin{align*}
+&
+\begin{cases}
+s_{max} &=A\left(1+k\right)\\
+s_{min} &=A\left(1-k\right)
+\end{cases}       
+\end{align*}
+\begin{equation}
+\Rightarrow  k=\frac{s_{max}-s_{min}}{s_{max}+s_{min} }
+\end{equation}
+
+\subsection{représentation spectrale d’un signal AM DBAP}
+
+\begin{align*}
+s\left(t\right) &= A \left(1+ k \cos 2 \pi f_{m} t\right) \cos 2 \pi f_{0} t \\
+ &= A \cos 2 \pi f_{0} t + k A \cos 2 \pi f_{m} t \cos 2 \pi f_{0} t \\ 
+ &= A \cos 2 \pi f_{0} t + \frac{ka}{2} \cos 2 \pi \left(f_{0}-f_{m}\right) t + \frac{ka}{2} \cos 2 \pi \left(f_{0} + f_{m}\right) t 
+\end{align*}
+
+Le spectre du signal AM DBAP possède donc une raie d’amplitude 𝐴 à la fréquence $f_{0}$ de la porteuse
+et deux raies latérales d’amplitude $ka$
+2
+aux fréquences $f_{0}-f_{m}$ et $f_{0}+f_{m}$
+
+\begin{itemize}
+	\item la porteuse a une amplitude $A$ ;
+	\item les raies latérales superieure et inférieure ont la même amplitude $\frac{ka}{2}$ ;
+	\item l'encombrement spectral du signal AM est le double de la fréquence \mbox{BF :} $B=2f_{m}$.
+	
+\end{itemize}
+
+%\begin{itemize}
+	\noindent\textbf{Remarque} : la place ocupée par ce signal modulé va de $f_{0}-f_{m} \rightarrow f_{0}+f_{m}$, donc la bande ocupée est égale a $2$ fois la fréquence de signal modulant. si nous voulons produire un signal modulé en amplitude par un signal BF à $\SI{10}{\kilo\hertz}$, notre spectre en signal modulé aura un largeur de  $ 2\times3= \SI{6}{\kilo\hertz}$,le faite de manipuler l'amplitude de la sinusoïde m'élargit le spectre de signal. 
+	
+%\end{itemize}
+
+Dans le pratique où \textbf{le signal modulant est quelconque} mais de spectre borné,\textit{John Renshaw Carson} à démontré en $1914$ que le spectre a une forme semblable.
+%\textit{John Renshaw Carson} à démontré en $1914$
+%Wrong, don’t talk about reserserch in the core text, put bibliography mark to the entry of the paper (with the author, date, publisher, city publishing, and issn number if any)
+\subsection{puissance d’un signal AM DBAP}
+
+Dans le cas d’un signal modulant sinusoïdal, le signal appliquée à l'entenne a $3$ composantes, donc la puissance totale dissipée dans l'antenne est la somme de 3 puissance :
+
+\begin{align*}
+&
+\begin{cases}
+P_{s} &=P_{porteuse}+ P_{BLI} + P_{BLS}\\
+P_{BLI}  &= P_{BLS}
+\end{cases}
+%\intertext{d'où}
+%P_{s} &=P_{porteuse} + 2\times P_{BL}     
+\end{align*} \\
+d'où :
+
+\begin{equation}
+\begin{aligned}
+P_{s} &=P_{porteuse} + 2\times P_{BL}
+\end{aligned}
+\end{equation}
+
+
+\begin{equation}
+P_{s}=\frac{A^{2}}{2}+2 \times \frac{\left(\frac{k A}{2}\right)^{2}}{2}=\frac{A^{2}}{2}+\frac{k^{2} A^{2}}{4}=\left(1+\frac{k^{2}}{2}\right) \frac{A^{2}}{2}
+\end{equation}
+
+	\begin{equation}
+	\begin{aligned}
+	P_{s}=\left(1+\frac{k^{2}}{2}\right) P_{ {porteuse }}
+	\end{aligned}
+	\end{equation}
+
+En général, le signal AM transmis ne doit pas être surmodulé :$k\leq1$ . Pour $k=1$ (valeur maximale),
+on a :
+\begin{equation}
+P_{s}= \frac{3}{2}P_{porteuse} \Rightarrow P_{porteuse}=\frac{2}{3}P_{s}
+\end{equation}
+Donc seul un tiers (au maximum) de la puissance du signal AM contient l’information utile. C’est un
+inconvinient de la modualtion AM DBAP : \textit{gaspillage de puissance}.
+
+%\section{La Production d'un signal AM} 
+\section{démodulation des signaux AM DBAP}
+\subsection{démodulation cohérente}
+Pour un signal $m\left(t\right)$ tel que $|m\left(t\right)|_{max}=1$,on a : 
+\begin{displaymath}
+\begin{aligned}
+v(t) &=s(t) \cos 2 \pi f_{0} t \\
+&=A(1+k \cdot m(t)) \cos ^{2} 2 \pi f_{0} t \\
+&=\frac{A}{2}(1+k \cdot m(t))\left(1+\cos 4 \pi f_{0} t\right) \\
+&=\frac{A}{2}+\frac{k \cdot A}{2} m(t)+\frac{A}{2} \cos 4 \pi f_{0} t+\frac{k \cdot A}{2} m(t) \cos 4 \pi f_{0} t
+\end{aligned}
+\end{displaymath}
+Aprés filtrage et suppression de la composante continue $\frac{A}{2}$, on obtient le signal  :
+\begin{equation}
+\hat{m}\left(t\right)=\frac{k \cdot A}{2}m\left(t\right)
+\end{equation}
+
+La démodulation cohérente présente le problème de la synchronisation de la porteuse locale avec la
+porteuse à l’émission. Une méthode de démodulation plus efficace est \textit{la détection d’enveloppe}.
+
+\subsection{démodulation AM par détection d’enveloppe}
+\subsubsection*{principe}
+
+mesure de l’enveloppe du signal pour récupérer le signal modulant \mbox{$m\left(t\right)$ :}
+
+Détecteur d’enveloppe :
+
+%\begin{figure}[!]
+%	\centering
+%	\includegraphics[max size={\textwidth}{\textheight}]{out.jpg}
+%	\caption{redresseur}
+%	\label{fig:redresseur}
+%\end{figure}
+
+\subsubsection*{fonctionnement}
+
+\section{la modulation AM double bande sans porteuse}
+
+\label{la modulation AM double bande sans porteuse}
+
+\subsection{principe}
+La modulation d'amplitude avec porteuse n'est pas le seul type de modulation, nous avons développer par la suite d'autre types de modulation en particulier la modulation double bande sans porteuse.
+
+La modulation d'amplitude double bande sans porteuse (double side band suppressed carrier) est utilisée dans les multiplexages stéréo.
+Le principe consiste à multiplier le signal modulant $m(t)$ avec la porteuse $p(t)$.
+Le signal modulé ne contient pas le signal de la porteuse : ceci permet d'éviter
+de le retrouver lors de la démodulation.
+Le signal AM modulé en amplitude Double Bande Sans Porteuse (DBSP) s’écrit :
+\begin{equation}
+s(t)=p(t) \times m(t)
+\end{equation}
+
+\subsection{Cas d’un signal modulant sinusoïdal}
+
+On considère le cas simple d'un signal modulant sinusoïdal $m(t)=A \cdot \cos \left(2 \pi f_{m} t\right)$ avec $f_{m} \ll f_{0}$. Le signal AM
+s’écrit alors :
+\begin{equation}
+s(t)=\cos \left(2 \pi f_{0} t\right) \cdot A \cos \left(2 \pi f_{m} t\right)
+\end{equation}
+\paragraph{Représentation temporelle}
+\paragraph{Représentation spectrale}
+Pour déterminer le spectre de $s(t)$, il faut le décomposer en une somme de signaux sinusoïdaux. On a :
+\begin{equation}
+s(t)=\cos 2 \pi f_{0} t \cdot A \cos 2 \pi f_{m} t=\frac{A}{2} \cos 2 \pi\left(f_{0}+f_{m}\right) t+\frac{A}{2} \cos 2 \pi\left(f_{0}-f_{m}\right)t
+\end{equation}
+Le spectre d’amplitude du signal modulé $s(t)$ est donc constitué de deux raies symétriques situées aux
+fréquences $f_{0}-f_{m}$ et $f_{0}+f_{m}$. De plus, il n’y a pas de composantes spectrales à la fréquence $f_{0}$ de la
+porteuse. L’allure du spectre d’amplitude du signal modulé justifie l’appelation Double Bande Sans
+Porteuse.
+
+Le signal modulé est un signal à bande étroite, centré autour de la fréquence $f_{0}$ de la porteuse. Le but
+de la modualtion est atteint : le signal BF est transformé en un signal HF.
+
+\subsection{Cas d’un signal modualant quelconque}
+\paragraph{Représentation temporelle}
+\paragraph{Représentation spectrale }
+Le spectre d’amplitude du signal AM DBSP avec un signal modulant quelconque est constitué de deux
+bandes symétriques, centrées autour de $f_{0}$ : la bande latérale inférieure (BLI) et la bande latérale
+supérieure (BLS).
+
+L’occupation spectrale du signal AM DBSP est :
+\begin{equation}
+B_{s}=2\times B_{m}
+\end{equation}
+
+\noindent\textbf{remarque} : La transmission d’un signal en modulation AM DBSP nécessite donc une largeur de bande double de
+celle du signal modulant.
+
+\section{Démodulation des signaux AM DBSP}
+\subsection{principe}
+\subsection{Représentation spectrale}
+
+
+
+
+
+
+
+
+
+\end{document}
+
