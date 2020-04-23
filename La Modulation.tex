@@ -275,20 +275,48 @@ celle du signal modulant.
 
 
 \chapter{La modulation de fréquence} 
-\section{intro}
+\section{introduction}
 La modulation de fréquence est une forme de modulation angulaire, où la fréquence
 varie en accordance avec le signal d'entré. ici, l'angle fait référence à la fréquence
 angulaire $\omega$. la fréquence angulaire $\omega$ (ou vitesse de rotation) est est une grandeur qui représente
 le rapport d'un angle de rotation au temps.
 \begin{equation}
-\omega=2 \pi f=\mathrm{d} \theta / \mathrm{d} t
+\omega=2 \pi f=\mathrm{d} \theta / \mathrm{d} t \label{3.1}
 \end{equation}
 où,
-\begin{enumerate}
+\begin{itemize}
 	\item $\omega$ la fréquence angulaire
-	\item f la fréquence en \hertz
+	\item f la fréquence en \si{\hertz}
 	\item $\theta$ la phase 
-\end{enumerate}
+\end{itemize}
+
+Remarquons que dans l'équation \ref{3.1}, la fréquence angulaire et grand par rapport a la fréquence f par un facteur de $2\pi$. On integrons l'équation \ref{3.1}, On obtient:
+
+\begin{equation}
+\theta_{i}(t)=2 \pi \int_{0}^{t} f_{i} d t \label{3.2}
+\end{equation}
+
+\begin{itemize}
+	\item $\theta_{i}$= la phase instantanée et
+	\item $f_{i}$= la fréquence instantanée
+\end{itemize}
+
+Dans la suite, cette forme sera la base de notre dérivation de la modulation de fréquence.
+\section{principe}
+Pour produire un signal modulé, il faut :
+\begin{itemize}
+	\item une porteuse sinusuidale $\mathrm{e_0}(\mathrm{t})$ :
+	\begin{equation}
+	e_{0}(t)=E \cos (\omega t+\varphi) 
+	\end{equation}
+	\item une information basse-fréquence $\mathrm{s}(\mathrm{t})$
+\end{itemize}
+
+\section{production d'un signal FM}
+\subsection{Oscillateur contrôlé en tension VCO}
+\subsubsection{définition}
+L'oscillateur contrôlé en tension (Voltage controlled oscillator / VCO) est un dispositif électronique qui génère un signal dont la fréquence fluctue par rapport à la tension d'entrée.
+\subsubsection{title}
 
 
 
