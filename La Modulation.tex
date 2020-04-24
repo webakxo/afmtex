@@ -328,6 +328,43 @@ C'est un montage typiquement utilisé dans les PLL (Phase-Locked Loop, boucle à
 \end{itemize}
 
 \subsection{production}
+Pour émettre en modulation de fréquence il faut produire un signal a l'aide d'un un oscillateur commandé en tension (VCO), ce signal
+doit etre sinusoïdal d’amplitude constante E et de fréquence variable, plus de ça on fixe le point de fonctionnement avec une polarisation
+continue. finalement on fait varier la fréquence en superposant le signal $s\left(t\right)$ :
+\begin{equation}
+f(t)=f_{0}+k \times s(t) \label{f ins}
+\end{equation}
+
+à travers l'équation \ref{f ins} on peut passer à la pulsation instantannée en multipliant par $2\pi$ puis à la phase en integrant :
+\begin{equation}
+\begin{aligned}
+&\omega(t)=2 \pi f(t)=\omega_{0}+2 \pi k\times s(t)\\
+&\theta(t)=\int \omega(t) d t=\omega_{0} t+2 \pi k \int s(t)d t
+\end{aligned}
+\end{equation}
+l'expression de la signal sinusoïdal d'amplitude E et de fréquence f(t) modulé en fréquence est : 
+\begin{equation}
+e(t)=E \cos (\theta(t))=E \cos \left(\omega_{0} t+2 \pi k \int s(t) d t\right)
+\end{equation}
+On va s'intéresser au cas d'un signal modulant sinusoïdal, $s(t)=\operatorname{acos}(\Omega t)$, donc l'expression de la signal porteuse sera :
+\begin{equation}
+\begin{aligned}
+&e(t)=E \cos (\theta(t))=E \cos \left(\omega_{0} t+2 \pi k \int s(t) d t\right)=E \cos \left(\omega o t+\frac{2 \pi k a}{\Omega} \sin (\Omega t)\right)\\
+&\text { d'où: } \quad e(t)=E \cos \left(\omega_{0} t+\frac{k a}{F} \sin (\Omega t)\right)
+\end{aligned}
+\end{equation}
+
+%ici las figures porteuse avec modulant
+\subsection{excursion en fréquence}
+On appelle excursion de fréquence $\Delta f$, la variation instantanée de la fréquence de la porteuse par rapport à la fréquence de celle-ci non modulée. Cette variation est symétrique par rapport à la fréquence de la porteuse non modulée et se note $\pm \Delta f$.
+
+quand le signal modulant s(t) évolue dans la plage $-{S_{max}}$, $+{S_{max}}$, la fréquence varie entre deux valeurs ${f_{min}}$ et ${f_{max}}$ :
+
+${f_{min}}=f_{0}-k{S_{max}}$  et  ${f_{max}}=f_{0}+k{S_{max}}$
+
+\subsection{Indice de modulation}
+
+
 
 
 
